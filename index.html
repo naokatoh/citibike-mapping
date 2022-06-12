@@ -1,64 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8' />
-    <title>Citi Bike Data Mapping</title>
-    <link rel="icon" href="img/favicon.png"> 
-
-
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="style.css">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <title>Introduction to Web Maps</title>
+        <link rel="icon" href="img/favicon.ico">
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500|Roboto:300,300i,400,400i">
-</head>
+    </head>
+    <body>
+        <h1 class="robotoMono">Introduction to Web Mapping</h1>
+        <h2>Created based on this <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html" target="_blank">tutorial</a> at <a href="https://pointsunknown.nyc/" target="_blank">Points Unknown</a></h2>
 
-<body>
-<h1 class ="robotoMono">Citi Bike Data Analysis</h1>
-<!-- <a class="top-pic" title="Jim.henderson, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:CB_stockpile_on_E27_%26_1st_bike_plaza_2021_jeh.jpg"><img width="512" alt="CB stockpile on E27 &amp; 1st bike plaza 2021 jeh" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/CB_stockpile_on_E27_%26_1st_bike_plaza_2021_jeh.jpg/512px-CB_stockpile_on_E27_%26_1st_bike_plaza_2021_jeh.jpg"></a> -->
-
-<p class="content">
-    After the pandemic broke out, zipping through the city on two wheels became more popular than ever in New York City. 
-</p>
-<p class="content">
-    Citi Bike, a privately owned public bicycle sharing system, <a href="https://twitter.com/CitiBikeNYC/status/1437881260748296196" target="new">hit a single day ridership record of 135,005 rides</a> on September 11, 2021. On average, each bike was used over five times per day in the same month, according to <a href="https://mot-marketing-whitelabel-prod.s3.amazonaws.com/nyc/September-2021-Citi-Bike-Monthly-Report.pdf" target="_blank">the company's monthly report.</a> 
-</p>
-
-
-<p class="content">
-    Here are analysis and mapping how Citi Bike is used in September 2020 and September 2021. Data for each time period are available from <a href="https://s3.amazonaws.com/tripdata/index.html" target="_blank">here</a>.
-</p>
-
-
-
-
-
-    <div class="flourish-embed flourish-cards" data-src="visualisation/10311091"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-
-<h2>Which Citi Bike station has more customers starting their trips? </h2>
-<p class="content">
-    Below are the maps that illustrate Citi Bike Station. Color difference depends on each station's number of starting and ending trips. Those with <strong class="marker-pink">pink</strong> dots have more customers starting their trips (above median), while those with <strong class="marker-green">green</strong> dots have more customers ending their trips (below median). 
-</p>
-
-<p class="content">
-The dots distribution shows that there are more station in September 2021, particularly in Inwood(Manhattan), the North Bronx, and Sunset Park, Brooklyn. According to Citi Bike, approximately 400 more stations were added during <a href="https://d21xlh2maitm24.cloudfront.net/nyc/September-2020-Citi-Bike-Monthly-Report.pdf?mtime=20201019132054" target="_blank"> 2020</a> and September 2021.
-</p>
-
-<p class="content">
-The color distribution suggests that more customer end their trips in the Lower Manhattan and Red Hook, Brooklyn have more stations with customer ending their trips.
-</p>
-
-
-
-
-<div class="map-body">
-<div id='map' ></div>
-<div id='map2' ></div>
-</div>
-<div class="map-overlay" id="legend"></div>
-    <script type='text/javascript' src="map.js"></script>
+        <h2>Population loss county indicator (<font color="#dc4e4e">red</font> = Population declining, <font color="#f1b8b8">pink</font> = Population NOT declining) </h2>
+        <p class="content">The number of residents declined between the 1990 and 2000 censuses and also between the 2000 and 2010 censuses. Original data can be downloaded from <a href="https://www.ers.usda.gov/data-products/county-typology-codes.aspx" target="_blank">here</a>. </p>
+       
     
-<button type="button" onclick="location.href='https://naokatoh.github.io/pointsunknown/'">Go back</button>
-</body>
+    <div id='map'></div>
+    <div id='title' class="title">
+        <h1>Population loss county indicator </h1>
+        <p>Counties which population declined between the 1990 and 2000 censuses and also between the 2000 and 2010 censuses</p>
+        <hr>
+        <div id="title" class="legend">
+            <div><span style="background-color: #dc4e4e"></span>Population declining</div>
+            <div><span style="background-color: #f1b8b8"></span>Population NOT declining</div>
+            
+        </div>
+    </div>
 
-</html>
+
+
+        
+        <h2>Ukraine: Border Crossings</h2>
+        <p class="content">Click a circle on this map and the names and the names of those who crossed the border on April 14, 2022 will appear in English and Ukrainian. This dataset is part of <a href="https://data.humdata.org/group/ukr" target="_blank">the Ukraine Data Grid</a>.</p>
+            <div id='map2'></div>
+            <script type='text/javascript' src="map.js"></script>
+            
+            <button type="button" onclick="location.href='https://naokatoh.github.io/pointsunknown/'">Go back</button>
+
+
+
+    </body>
+    </html>
