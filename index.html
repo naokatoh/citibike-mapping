@@ -1,3 +1,4 @@
+<!-- Citi Bike Mapping -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
 
 <h2>Which Citi Bike station has more customers starting their trips? </h2>
 <p class="content">
-    Below are the maps that illustrate Citi Bike Station. Each color represents the difference between the number of stations that have started and finished service.Those with <strong class="marker-pink">pink</strong> dots are stations with more customers starting their trips (above median), while those with <strong class="marker-green">green</strong> dots have more customers ending their trips (below median). 
+    Below are the maps that illustrate the location of Citi Bike stations. Each color represents the difference between the number of trips that started and finished at that station. Those with <strong class="marker-pink">pink</strong> dots are stations with more customers starting their trips (above median: <small><i>-4 in 2020 and 2 in 2021</i></small>), while those with <strong class="marker-green">green</strong> dots have more customers ending their trips (below median). <strong class="marker-Dpink">Darker pink</strong> or <strong class="marker-Dgreen">green</strong> dots represent stations with particularly high numbers of trip starts and trip ends, based on the upper/lower quantile. <i><small>(Note: Darker pink = the difference between the number of starting and ending trip at the station is above 8 in 2020, and above 15 in 2021. Darker green = below -17 in 2020, and below -11 in 2021)</i></small>
 </p>
 
 <p class="content">
@@ -51,10 +52,6 @@ The dots distribution shows that there are more stations in September 2021, part
 
 
 
-
-
-
-
 <div class="map-body">
     <div><h3>2020</h3></div>
 <div id='map' ></div>
@@ -62,6 +59,11 @@ The dots distribution shows that there are more stations in September 2021, part
 <div id='map2' ></div>
 </div>
 <div class="map-overlay" id="legend"></div>
+
+
+
+
+
     <script type='text/javascript' src="map.js"></script>
     
 <button type="button" onclick="location.href='https://naokatoh.github.io/pointsunknown/'">Go back</button>

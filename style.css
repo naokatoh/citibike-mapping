@@ -66,11 +66,20 @@ p.content {
 
 
 .marker-pink { 
-    background:linear-gradient(transparent 60%, #d98aba 90%); 
+    background:linear-gradient(transparent 60%, #f2d0e5 90%); 
+}
+
+.marker-Dpink { 
+    background:linear-gradient(transparent 60%, #d64fa2 90%); 
 }
 
 .marker-green { 
-    background:linear-gradient(transparent 60%, #78c9a1 90%); }
+    background:linear-gradient(transparent 60%, #b8e186 90%); }
+
+.marker-Dgreen { 
+    background:linear-gradient(transparent 60%, #008837 90%); }
+
+
 
 @media screen and (max-width: 767px) {
 
@@ -183,22 +192,25 @@ img{
 
 .map-overlay {
     position: relative;
-    bottom: 0;
+    /* bottom: 0; */
     right: -50px;
     top: -200px;
     background: #fff;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     font-family: Arial, sans-serif;
     overflow: auto;
+    z-index: 100;
     border-radius: 3px;
+    opacity: 70%;
     }
 
 #legend {
+    
     padding: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 18px;
     height: auto;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     width: 250px;
     color: rgb(36, 36, 36);
     font-family: 'Roboto Mono', monospace;
